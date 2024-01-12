@@ -10,8 +10,38 @@ body {
   color: #FEF2BF;
 }
 
+.LeaderBoard {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  margin:  5%;
+  margin-left: 120%;
+  color: #FEF2BF;
+}
+.emoji{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+  margin:  5%;
+  margin-top: 0;
+  margin-left: 125%;
+  color: #FEF2BF;
+}
+.points{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  margin:  5%;
+  
+  color: #FEF2BF;
+}
+.go{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+  margin:  5%;
+  margin-top: 40px;
+  color: black;
+}
+
 .container {
-  display: block;
+  display: flex;
   width: 50%;
   margin: auto;
 
@@ -22,6 +52,15 @@ body {
   display: inline-block;
   height: 200px;
   width: 200px;
+  border: 10px solid black;
+  border-radius: 20%;
+}
+
+.str {
+  margin: 25px;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
   border: 10px solid black;
   border-radius: 20%;
 }
@@ -37,6 +76,9 @@ body {
 
 .green {
   background-color: green;
+}
+.black {
+  background-color:#FEF2BF;
 }
 
 .blue {
