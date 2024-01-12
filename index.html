@@ -10,7 +10,8 @@
 </head>
 
 <body>
-  <h1 id="level-title">Press A Key to Start</h1>
+  <h1 id="level-title">Press Go to Start</h1>
+
   <div class="container">
     <div class="row">
 
@@ -31,10 +32,30 @@
       <div type="button" id="blue" onclick="userclick(event)" class="btn blue">
 
       </div>
-
+     
+    </div> 
+    <div >
+    <h3 class="LeaderBoard" style="display: flex;">LEADERBOARD</h3>
+    <br>
+    <div style="display: flex;">
+       <h4 class="emoji">🥇</h4><h4 id="1" class="points"> </h4>
+      </div>
+      <br>
+      <div style="display: flex;">
+        <h4 class="emoji">🥈</h4><h4 id="2" class="points"></h4>
+       </div>
+       <br>
+       <div style="display: flex;">
+        <h4 class="emoji">🥉</h4><h4 id="3" class="points"></h4>
+       </div>
+       <div type="button" id="start" onclick="go()" class="str black"> <h3 class="go">GO</h3></div>
     </div>
-   
+  
+  </div>
+  
 
+  </div>
+ 
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="game.js"></script>
