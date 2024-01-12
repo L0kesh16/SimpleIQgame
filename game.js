@@ -5,11 +5,17 @@ var gamepatter=[];
 var st=1;
 
 // A to Start
+// localStorage.removeItem("first");
+// localStorage.removeItem("second");
+// localStorage.removeItem("third");
 
-document.addEventListener("keypress",function start(event)
-{
+document.getElementById("1").innerHTML=localStorage.getItem("first");
+document.getElementById("2").innerHTML=localStorage.getItem("second");
+document.getElementById("3").innerHTML=localStorage.getItem("third");
+
+function go(){
    
-    if(event.key=='a' && st ==1)
+    if(st ==1)
     {
         document.querySelector("h1").innerHTML="Level "+count;
         count++;
@@ -17,7 +23,7 @@ document.addEventListener("keypress",function start(event)
         nextsequence();
         
     }
-});
+};
 
 // Clicking Animation and Sound
 
@@ -44,7 +50,7 @@ setTimeout(function()
     audio.play();
 }
 
-//Generation of Random Buttons
+//Generation of Random Buttons 
 
 
 function nextsequence(){
@@ -88,6 +94,26 @@ function gamewin(){
         document.querySelector("body").classList.add("game-over");
         setTimeout(function(){ document.querySelector("body").classList.remove("game-over");},100);
         document.querySelector("h1").innerHTML="you Lost!, Try Again 😕"
+        if(localStorage.getItem("first")<count){
+            localStorage.setItem("third",localStorage.getItem("second"));
+            document.getElementById("3").innerHTML=localStorage.getItem("third");
+            localStorage.setItem("second",localStorage.getItem("first"));
+            document.getElementById("2").innerHTML=localStorage.getItem("second");
+            localStorage.setItem("first",count);
+            document.getElementById("1").innerHTML=localStorage.getItem("first");    
+        }
+       else if(localStorage.getItem("second")<count && count <localStorage.getItem("first")){
+       
+            localStorage.setItem("third",localStorage.getItem("second"));
+            document.getElementById("3").innerHTML=localStorage.getItem("third");
+            localStorage.setItem("second",count);
+            document.getElementById("2").innerHTML=localStorage.getItem("second");
+        }
+        else if(localStorage.getItem("third")<count && count<localStorage.getItem("second") ){
+            localStorage.setItem("third",count);
+            document.getElementById("3").innerHTML=localStorage.getItem("third");
+        }
+        
         setTimeout(function(){
         location.reload();
         },1500);     
@@ -97,7 +123,8 @@ function gamewin(){
     {
         userarr= [];
         st=1;
-        document.querySelector("h1").innerHTML="You win! and press A to continue" 
+       
+        document.querySelector("h1").innerHTML="You win! and press Go to continue" 
     }  
 }
         
