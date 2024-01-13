@@ -4,14 +4,17 @@ var color = ["red","blue","green","yellow"];
 var gamepatter=[];
 var st=1;
 
+var first=localStorage.getItem("first");
+var second=localStorage.getItem("second");
+var third=localStorage.getItem("third");
 // A to Start
 // localStorage.removeItem("first");
 // localStorage.removeItem("second");
 // localStorage.removeItem("third");
 
-document.getElementById("1").innerHTML=localStorage.getItem("first");
-document.getElementById("2").innerHTML=localStorage.getItem("second");
-document.getElementById("3").innerHTML=localStorage.getItem("third");
+document.getElementById("1").innerHTML=first;
+document.getElementById("2").innerHTML=second;
+document.getElementById("3").innerHTML=third;
 
 function go(){
    
@@ -97,21 +100,27 @@ function gamewin(){
         if(localStorage.getItem("first")<count){
             localStorage.setItem("third",localStorage.getItem("second"));
             document.getElementById("3").innerHTML=localStorage.getItem("third");
+            third=second;
             localStorage.setItem("second",localStorage.getItem("first"));
             document.getElementById("2").innerHTML=localStorage.getItem("second");
+            second=first;
             localStorage.setItem("first",count);
             document.getElementById("1").innerHTML=localStorage.getItem("first");    
+            first=count;
         }
        else if(localStorage.getItem("second")<count && count <localStorage.getItem("first")){
        
             localStorage.setItem("third",localStorage.getItem("second"));
             document.getElementById("3").innerHTML=localStorage.getItem("third");
+            third=second;
             localStorage.setItem("second",count);
             document.getElementById("2").innerHTML=localStorage.getItem("second");
+            second=count;
         }
         else if(localStorage.getItem("third")<count && count<localStorage.getItem("second") ){
             localStorage.setItem("third",count);
             document.getElementById("3").innerHTML=localStorage.getItem("third");
+            third=count;
         }
         
         setTimeout(function(){
