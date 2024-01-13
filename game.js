@@ -8,9 +8,7 @@ var st=1;
 // var second=localStorage.getItem("second");
 // var third=localStorage.getItem("third");
 // A to Start
-// document.getElementById("1").innerHTML=first;
-// document.getElementById("2").innerHTML=second;
-// document.getElementById("3").innerHTML=third;
+
 
 function go(){
    
